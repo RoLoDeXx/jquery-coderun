@@ -156,3 +156,19 @@ $("button").click(function() {
     type: "POST"
   });
 });
+
+// 19
+
+$("button").click(function() {
+  $("#div").load("randomstring.txt", function(responseTxt, statusTxt, xhr) {
+    if (statusTxt == "success") alert("content loaded");
+    if (statusTxt == "error") alert("Error");
+  });
+});
+
+// 20
+
+jQuery.get("file.txt", function(data) {
+  alert(data);
+  $("#div").html(data.replace("n", ""));
+});
